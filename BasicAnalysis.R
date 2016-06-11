@@ -1,30 +1,33 @@
-########################################################################################
+##################################################################
 # BasicAnalysis.R
-# Reads in data, combines into single data.frame and does some exploratory analysis and
-# modelling (e.g. central tendancy, normality, histograms, t-tests, anovas, CFA and SEM)
+# Reads in data, combines into single data.frame and does 
+# some exploratory analysis and modelling (e.g. central tendancy,
+# normality, histograms, t-tests, anovas, CFA and SEM)
 # 
 # Created by Nikki Rubinstein and Tim Esler
 # Fri Jun  3 04:42:52 UTC 2016
-########################################################################################
+##################################################################
 
 
 
 
-### BEFORE WE GET STARTED ##############################################################
+### BEFORE WE GET STARTED ########################################
 
-# We first need to install any necessary packages that we'll be using:
+# We first need to install any necessary packages that we'll be
+# using:
 #
 #     install.packages("lavaan")
 #     system(sudo apt-get install r-cran-xml)
 #
-# Now restart your session of R (we only need to do this because we running R on Linux), then type:
+# Now restart your session of R (we only need to do this because
+# we are running R on Linux), then type:
 #
 #     install.packages("semPlot")
 
 
 
 
-### Load required packages #############################################################
+### Load required packages #######################################
 
 library(plyr)
 library(lavaan)
@@ -34,15 +37,17 @@ library(ggplot2)
 
 
 
-### Read data files into R #############################################################
+### Read data files into R #######################################
 
-# For this workshop we are using longitudinal data provided by Dan Loton
-# taken over time from 9 time points (waves). The raw data is stored in 9 CSV files.
+# For this workshop we are using longitudinal data provided by Dan
+# Loton taken over time from 9 time points (waves). The raw data
+# is stored in 9 CSV files.
 #
 # We will:
-#     - Load each dataset into R
-#     - Run an preliminary exploration of the data to gather info about 
-#       missing values, dimensionality, variations in column names across datsets
+#   - Load each dataset into R
+#   - Run an preliminary exploration of the data to gather info
+#     about missing values, dimensionality, variations in column
+#     names across datsets
 
 # Initialise a list to hold data from each wave
 dataList <- list()
